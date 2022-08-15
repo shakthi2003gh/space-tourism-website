@@ -13,7 +13,7 @@ class Header extends Component {
     const { tabs } = this.props;
 
     return (
-      <header>
+      <header className="container">
         <img src="/asserts/icons/logo.svg" className="logo" alt="" />
 
         <img

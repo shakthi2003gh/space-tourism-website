@@ -25,7 +25,74 @@ html {
 
 body {
   font-family: var(--ff-primary);
+  text-align: center;
+  min-height: 100vh;
+  padding-bottom: 0.001px;
   color: var(--clr-secondary);
+}
+
+.main-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -2;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font: 8rem var(--ff-title);
+  margin: 1.6rem 0;
+  color: var(--clr-primary);
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 25px;
+  width: 327px;
+  margin: 0 auto;
+}
+
+sub {
+  font: 1.6rem var(--ff-secondary);
+  letter-spacing: 2.7px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 15rem;
+    margin: 2.4rem 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 28px;
+    width: 444px;
+  }
+
+  sub {
+    font-size: 2rem;
+    letter-spacing: 3.375px;
+  }
+}
+
+@media (min-width: 1440px) {
+  p {
+    font-size: 1.8rem;
+    line-height: 32px;
+  }
+
+  sub {
+    font-size: 2.8rem;
+  }
 }
 
 /* >header */
@@ -33,6 +100,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   padding: 2.4rem;
 }
 
@@ -57,11 +125,14 @@ header {
 }
 
 nav {
-  position: absolute;
-  inset: 0;
-  left: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
   display: none;
   width: 254px;
+  min-height: 100vh;
+  overscroll-behavior: contain;
 }
 
 nav.show {
@@ -77,7 +148,7 @@ nav .bg {
   z-index: -1;
 }
 
-nav a {
+ul a {
   color: unset;
   text-decoration: none;
 }
@@ -102,13 +173,13 @@ li .tab-name {
   margin-left: 1.1rem;
 }
 
-a {
+ul a {
   display: inline-block;
   padding: 0.65rem 0;
   outline: none;
 }
 
-a.active {
+ul a.active {
   width: 100%;
   border-right: 4px solid white;
 }
@@ -135,6 +206,7 @@ a.active {
     position: relative;
     display: block;
     width: 450px;
+    min-height: fit-content;
     padding: 3.9rem 4.8rem;
     padding-bottom: 0;
   }
@@ -146,17 +218,18 @@ a.active {
     margin: 0;
   }
 
-  a {
+  ul a {
     padding-top: 0;
     padding-bottom: 3.6rem;
+    border-bottom: 4px solid transparent;
   }
 
   li:hover a,
-  a:focus {
+  ul a:focus {
     border-bottom: 4px solid rgba(255, 255, 255, 0.4);
   }
 
-  a.active {
+  ul a.active {
     border-right: none;
     border-bottom: 4px solid white;
   }
@@ -185,9 +258,9 @@ a.active {
   nav::after {
     position: absolute;
     top: 50%;
-    left: -85%;
+    right: 95%;
     content: "";
-    width: 90%;
+    width: 500px;
     height: 1px;
     background: white;
     opacity: 0.25;
@@ -197,7 +270,7 @@ a.active {
     width: 520px;
   }
 
-  a {
+  ul a {
     padding-bottom: 3.4rem;
   }
 
@@ -205,5 +278,79 @@ a.active {
     display: inline-block;
     margin-right: 11px;
     letter-spacing: 2.7px;
+  }
+}
+
+/* >home */
+.home .content {
+  margin: 5.8rem 2.4rem;
+}
+
+.explore-btn {
+  position: relative;
+  display: grid;
+  place-content: center;
+  font: 2rem var(--ff-title);
+  text-decoration: none;
+  letter-spacing: 1.25px;
+  width: 150px;
+  height: 150px;
+  margin: 8.1rem auto 4.8rem;
+  outline: none;
+  border: none;
+  border-radius: 100vh;
+  color: var(--clr-black);
+  background-color: white;
+}
+
+.explore-btn:hover::before,
+.explore-btn:focus::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 230px;
+  height: 230px;
+  border-radius: 100vh;
+  background: hsla(0, 0%, 100%, 0.1);
+}
+
+@media (min-width: 768px) {
+  .home .content {
+    margin: 10.6rem 15.9rem;
+  }
+
+  .explore-btn {
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    width: 242px;
+    height: 242px;
+    margin: 15.6rem auto 9rem;
+  }
+
+  .explore-btn:hover::before,
+  .explore-btn:focus::before {
+    width: 330px;
+    height: 330px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home .content {
+    margin: 25.1rem 0 13.1rem 16.5rem;
+  }
+
+  .explore-btn {
+    margin: 35.9rem 0 0 38.6rem;
+  }
+
+  picture {
+    position: absolute;
   }
 }
