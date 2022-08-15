@@ -28,10 +28,182 @@ body {
   color: var(--clr-secondary);
 }
 
-.heading {
-  font-family: var(--ff-title);
+/* >header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
 }
 
-.sub-heading {
-  font-family: var(--ff-secondary);
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background-color: white;
+}
+
+.menu-btn {
+  width: 24px;
+  height: 21px;
+  z-index: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 34px;
+  right: 26px;
+  width: 19px;
+}
+
+nav {
+  position: absolute;
+  inset: 0;
+  left: auto;
+  display: none;
+  width: 254px;
+}
+
+nav.show {
+  display: block;
+  z-index: 2;
+}
+
+nav .bg {
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 100%, 0.039);
+  backdrop-filter: blur(81.5485px);
+  z-index: -1;
+}
+
+nav a {
+  color: unset;
+  text-decoration: none;
+}
+
+ul.tabs {
+  display: grid;
+  gap: 1.9rem;
+  list-style: none;
+  font: 16px var(--ff-secondary);
+  padding-left: 3.2rem;
+  margin-top: 11.8rem;
+}
+
+li .index {
+  display: inline-block;
+  font-weight: 700;
+  width: 19px;
+}
+
+li .tab-name {
+  text-transform: uppercase;
+  margin-left: 1.1rem;
+}
+
+a {
+  display: inline-block;
+  padding: 0.65rem 0;
+  outline: none;
+}
+
+a.active {
+  width: 100%;
+  border-right: 4px solid white;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 0;
+  }
+
+  .logo {
+    width: 4.8rem;
+    height: 4.8rem;
+    margin: 2.4rem 4rem;
+  }
+
+  .menu-btn,
+  .close-btn,
+  li .index {
+    display: none;
+  }
+
+  nav,
+  nav.show {
+    position: relative;
+    display: block;
+    width: 450px;
+    padding: 3.9rem 4.8rem;
+    padding-bottom: 0;
+  }
+
+  ul.tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    padding-top: 0;
+    padding-bottom: 3.6rem;
+  }
+
+  li:hover a,
+  a:focus {
+    border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+  }
+
+  a.active {
+    border-right: none;
+    border-bottom: 4px solid white;
+  }
+
+  li .tab-name {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  header {
+    padding: 4rem 5.5rem;
+    padding-right: 0;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  nav,
+  nav.show {
+    width: 830px;
+    padding: 3.9rem 16.5rem 0 12.3rem;
+  }
+
+  nav::after {
+    position: absolute;
+    top: 50%;
+    left: -85%;
+    content: "";
+    width: 90%;
+    height: 1px;
+    background: white;
+    opacity: 0.25;
+  }
+
+  ul.tabs {
+    width: 520px;
+  }
+
+  a {
+    padding-bottom: 3.4rem;
+  }
+
+  li .index {
+    display: inline-block;
+    margin-right: 11px;
+    letter-spacing: 2.7px;
+  }
 }
