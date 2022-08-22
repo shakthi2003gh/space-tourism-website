@@ -1,8 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
-import "./styles/App.css";
-import obj from "./data.json";
-import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header";
 import Home from "./components/home";
+import DestinationPage from "./components/destinationPage";
+import obj from "./data.json";
+import "./styles/App.css";
 
 function App() {
   const [tabs, setTabs] = useState([]);
@@ -16,7 +18,13 @@ function App() {
   return (
     <Fragment>
       <Header tabs={tabs} />
-      <Home />
+
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="destinations" element={<DestinationPage />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </Fragment>
   );
 }

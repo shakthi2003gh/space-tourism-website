@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const Tabs = ({ tabs }) => {
+const Nav = ({ tabs }) => {
   return (
     <ul className="tabs">
       {tabs.map((tab, index) => (
@@ -15,4 +15,4 @@ const Tabs = ({ tabs }) => {
   );
 };
 
-export default Tabs;
+export default Nav;

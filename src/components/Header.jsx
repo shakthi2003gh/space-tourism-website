@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Tabs from "./common/rendertabs";
+import Nav from "./common/renderNav";
 
 class Header extends Component {
   state = { menuOpen: "" };
@@ -33,7 +33,7 @@ class Header extends Component {
             onClick={this.handleMenuBtn}
           />
 
-          <Tabs tabs={tabs} />
+          <Nav tabs={tabs} />
         </nav>
       </header>
     );

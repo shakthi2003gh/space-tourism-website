@@ -1,27 +1,10 @@
 import { Link } from "react-router-dom";
+import BgImage from "./common/renderBgImage";
 
 const Home = () => {
   return (
     <div className="home container">
-      <picture>
-        <source
-          media="(max-width: 424px)"
-          srcSet="/asserts/home/background-home-mobile.jpg"
-        />
-
-        <source
-          media="(max-width: 1439px)"
-          srcSet="/asserts/home/background-home-tablet.jpg"
-        />
-
-        <source srcSet="/asserts/home/background-home-desktop.jpg" />
-
-        <img
-          src="/asserts/home/background-home-desktop.jpg"
-          className="main-bg"
-          alt=""
-        />
-      </picture>
+      <BgImage image={"home"} />
 
       <div className="content">
         <sub>SO, YOU WANT TO TRAVEL TO</sub>

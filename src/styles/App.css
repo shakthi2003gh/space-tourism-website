@@ -29,6 +29,7 @@ body {
   min-height: 100vh;
   padding-bottom: 0.001px;
   color: var(--clr-secondary);
+  background-color: hsl(231deg 39% 7%);
 }
 
 .main-bg {
@@ -48,10 +49,22 @@ body {
   margin: 0 auto;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--clr-primary);
+}
+
 h1 {
   font: 8rem var(--ff-title);
   margin: 1.6rem 0;
-  color: var(--clr-primary);
+}
+
+h2 {
+  font: 400 5.6rem var(--ff-title);
+  margin: 2rem 0 1px;
 }
 
 p {
@@ -61,9 +74,23 @@ p {
   margin: 0 auto;
 }
 
-sub {
+sub,
+.heading {
   font: 1.6rem var(--ff-secondary);
   letter-spacing: 2.7px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.heading .index {
+  font-weight: 700;
+  opacity: 0.25;
 }
 
 @media (min-width: 768px) {
@@ -72,10 +99,19 @@ sub {
     margin: 2.4rem 0;
   }
 
+  h2 {
+    font-size: 80px;
+    margin: 3rem 0 0.8rem;
+  }
+
   p {
     font-size: 1.6rem;
     line-height: 28px;
     width: 444px;
+  }
+
+  .destination p {
+    width: 573px;
   }
 
   sub {
@@ -85,9 +121,18 @@ sub {
 }
 
 @media (min-width: 1440px) {
+  h2 {
+    font-size: 10rem;
+  }
+
   p {
     font-size: 1.8rem;
     line-height: 32px;
+  }
+
+  .destination p {
+    width: 100%;
+    margin: 0;
   }
 
   sub {
@@ -124,7 +169,7 @@ header {
   width: 19px;
 }
 
-nav {
+header nav {
   position: fixed;
   top: 0;
   right: 0;
@@ -135,12 +180,12 @@ nav {
   overscroll-behavior: contain;
 }
 
-nav.show {
+header nav.show {
   display: block;
   z-index: 2;
 }
 
-nav .bg {
+header nav .bg {
   position: absolute;
   inset: 0;
   background: hsla(0, 0%, 100%, 0.039);
@@ -201,8 +246,8 @@ ul a.active {
     display: none;
   }
 
-  nav,
-  nav.show {
+  header nav,
+  header nav.show {
     position: relative;
     display: block;
     width: 450px;
@@ -249,13 +294,13 @@ ul a.active {
     margin: 0;
   }
 
-  nav,
-  nav.show {
+  header nav,
+  header nav.show {
     width: 830px;
     padding: 3.9rem 16.5rem 0 12.3rem;
   }
 
-  nav::after {
+  header nav::after {
     position: absolute;
     top: 50%;
     right: 95%;
@@ -352,5 +397,112 @@ ul a.active {
 
   picture {
     position: absolute;
+  }
+}
+
+/* >destination */
+.destination {
+  margin-top: 1rem;
+}
+
+.planet {
+  width: 170px;
+  aspect-ratio: 1;
+  margin-top: 3.2rem;
+}
+
+.destination ul {
+  display: flex;
+  justify-content: space-between;
+  font: 400 1.4rem var(--ff-secondary);
+  list-style: none;
+  letter-spacing: 2.3625px;
+  text-transform: uppercase;
+  width: 237.5px;
+  height: 28px;
+  padding: 0;
+  margin: 2.6rem auto 0;
+}
+
+.destination li:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.destination li.active {
+  color: var(--clr-primary);
+  border-bottom: 3px solid var(--clr-primary);
+}
+
+.destination .stats {
+  display: grid;
+  gap: 3.2rem;
+  font: 1.4rem var(--ff-secondary);
+  letter-spacing: 2.3625px;
+  text-transform: uppercase;
+  padding: 3.2rem;
+  margin: 3.2rem 2.4rem;
+  border-top: 1px solid hsl(231, 15%, 26%);
+}
+
+:is(.distance, .time) div {
+  font: 28px var(--ff-title);
+  margin-top: 1.2rem;
+  color: var(--clr-primary);
+}
+
+@media (min-width: 768px) {
+  .destination .heading {
+    font-size: 2rem;
+    margin: 4rem 0 0 4rem;
+    justify-content: start;
+  }
+
+  .destination .planet {
+    width: 300px;
+    margin: 6rem 0 5.3rem;
+  }
+
+  .destination .stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 2.9rem;
+    margin: 4.9rem 9.8rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .destination {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15.7rem;
+    text-align: left;
+    margin-bottom: 11rem;
+  }
+
+  .destination .heading {
+    margin: 3.6rem 0 0 16.5rem;
+  }
+
+  .destination .planet {
+    align-self: center;
+    width: 445px;
+    margin: 9.7rem 0 0 23rem;
+  }
+
+  .destination .content {
+    width: 445px;
+    margin-top: 13.4rem;
+  }
+
+  .destination ul {
+    margin: 0;
+  }
+
+  .destination .stats {
+    justify-content: start;
+    gap: 7.9rem;
+    padding: 2.8rem 0 0;
+    margin: 5.4rem 0 0;
   }
 }
