@@ -52,20 +52,20 @@ class CrewPage extends Component {
           <span className="title">Meet your crew</span>
         </div>
 
-        <picture className="crew-picture">
-          <source
-            media="(max-width: 424px)"
-            srcSet={`/asserts/crew/image-${data[index].img}.webp`}
-          />
-
-          <source srcSet={`/asserts/crew/image-${data[index].img}.png`} />
-
-          <img
-            src={`/asserts/crew/image-${data[index].img}.webp`}
-            className="crew-img"
-            alt=""
-          />
-        </picture>
+        <div className="crew-image">
+          <picture>
+            <source
+              media="(max-width: 424px)"
+              srcSet={`/asserts/crew/image-${data[index].img}.webp`}
+            />
+            <source srcSet={`/asserts/crew/image-${data[index].img}.png`} />
+            <img
+              src={`/asserts/crew/image-${data[index].img}.webp`}
+              className="crew-img"
+              alt=""
+            />
+          </picture>
+        </div>
 
         <nav>
           <ul>

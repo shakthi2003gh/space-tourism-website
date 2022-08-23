@@ -72,7 +72,7 @@ h2 {
   margin: 2rem 0 1px;
 }
 
-.crew h2 {
+:is(.crew, .technology) h2 {
   font-size: 24px;
   text-transform: uppercase;
   margin: 0.8rem 0 1.6rem;
@@ -121,8 +121,12 @@ sub,
     margin: 3rem 0 0.8rem;
   }
 
-  .crew h2 {
+  :is(.crew, .technology) h2 {
     font-size: 40px;
+  }
+
+  .technology h2 {
+    margin: 1.6rem 0;
   }
 
   p {
@@ -140,7 +144,7 @@ sub,
     height: 115px;
   }
 
-  sub {
+  .destination sub {
     font-size: 2rem;
     letter-spacing: 3.375px;
   }
@@ -164,6 +168,10 @@ sub,
     margin: 1.5rem 0 2.7rem;
   }
 
+  .technology h2 {
+    margin: 1.1rem 0 1.7rem;
+  }
+
   p {
     font-size: 1.8rem;
     line-height: 32px;
@@ -179,7 +187,15 @@ sub,
     margin: 0;
   }
 
-  sub,
+  .technology p {
+    height: 192px;
+  }
+
+  .technology p {
+    margin: 0;
+  }
+
+  .destination sub,
   .heading {
     font-size: 2.8rem;
   }
@@ -550,25 +566,15 @@ ul a.active {
 }
 
 /* >crew */
+.crew-image {
+  width: 327px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+}
+
 .crew-img {
-  position: relative;
   height: 222px;
   margin-top: 3.2rem;
-}
-
-.crew .crew-picture {
-  position: relative;
-}
-
-.crew .crew-picture::after {
-  position: absolute;
-  left: -45%;
-  bottom: 0;
-  content: "";
-  width: 327px;
-  height: 1px;
-  background-color: white;
-  opacity: 0.17;
 }
 
 .crew .content {
@@ -605,14 +611,12 @@ ul a.active {
     display: grid;
   }
 
-  .crew .crew-picture {
+  .crew .crew-image {
     justify-self: center;
+    width: fit-content;
     margin-top: 4rem;
     order: 3;
-  }
-
-  .crew .crew-picture::after {
-    display: none;
+    border: none;
   }
 
   .crew-img {
@@ -635,10 +639,10 @@ ul a.active {
     text-align: left;
   }
 
-  .crew .crew-picture {
+  .crew .crew-image {
     position: absolute;
-    bottom: 0;
-    right: 137px;
+    top: 4rem;
+    left: 57%;
   }
 
   .crew-img {
@@ -664,5 +668,99 @@ ul a.active {
 
   .crew li {
     width: 15px;
+  }
+}
+
+/* >technology */
+.technology {
+  margin-bottom: 6.2rem;
+}
+
+.technology-img {
+  width: 100%;
+  height: 170px;
+  margin: 3.2rem 0 3.4rem;
+}
+
+.technology ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.technology .content {
+  margin-top: 3.7rem;
+}
+
+.technology li {
+  display: grid;
+  place-content: center;
+  font: 1.6rem var(--ff-title);
+  width: 40px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+}
+
+.technology li:hover {
+  border-color: white;
+  cursor: pointer;
+}
+
+.technology li.active {
+  color: var(--clr-black);
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  .technology-img {
+    height: 310px;
+    margin: 6rem 0 5.6rem;
+  }
+
+  .technology li {
+    width: 6rem;
+    font-size: 2.4rem;
+  }
+
+  .technology .content {
+    margin-top: 4.4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .technology {
+    position: relative;
+    padding-bottom: 3rem;
+  }
+
+  .technology-picture {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+  }
+
+  .technology-img {
+    width: 515px;
+    height: 527px;
+    margin: 0;
+  }
+
+  .technology ul {
+    position: absolute;
+    top: 17.1rem;
+    left: 16.5rem;
+    display: grid;
+    gap: 3.2rem;
+  }
+
+  .technology li {
+    width: 8rem;
+    font-size: 3.2rem;
+  }
+
+  .technology .content {
+    text-align: left;
+    margin: 13.7rem 0 12rem 32.5rem;
   }
 }
