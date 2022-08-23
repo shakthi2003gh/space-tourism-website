@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BgImage from "./common/renderBgImage";
+import { useEffect } from "react";
 
 const Home = () => {
   return (

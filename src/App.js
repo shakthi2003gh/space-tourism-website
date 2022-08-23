@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import Home from "./components/home";
 import DestinationPage from "./components/destinationPage";
+import CrewPage from "./components/crewPage";
 import obj from "./data.json";
 import "./styles/App.css";
 
@@ -20,10 +21,10 @@ function App() {
       <Header tabs={tabs} />
 
       <Routes>
-        <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="destinations" element={<DestinationPage />} />
-        <Route path="*" element={<Home />} />
+        <Route path="crew" element={<CrewPage />} />
+        <Route index element={<Home />} />
       </Routes>
     </Fragment>
   );
