@@ -65,7 +65,7 @@ class DestinationPage extends Component {
           </div>
 
           <img
-            src={`/asserts/destination/image-${currentTab}.webp`}
+            src={`/assets/destination/image-${currentTab}.webp`}
             className="planet"
             alt=""
           />

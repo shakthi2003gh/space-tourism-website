@@ -45,15 +45,15 @@ class TechnologyPage extends Component {
         <picture className="technology-picture">
           <source
             media="(max-width: 1439px)"
-            srcSet={`/asserts/technology/image-${data[index].img}-landscape.jpg`}
+            srcSet={`/assets/technology/image-${data[index].img}-landscape.jpg`}
           />
 
           <source
-            srcSet={`/asserts/technology/image-${data[index].img}-portrait.jpg`}
+            srcSet={`/assets/technology/image-${data[index].img}-portrait.jpg`}
           />
 
           <img
-            src={`/asserts/technology/image-${data[index].img}-landscape.jpg`}
+            src={`/assets/technology/image-${data[index].img}-landscape.jpg`}
             className="technology-img"
             alt=""
           />

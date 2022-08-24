@@ -56,11 +56,11 @@ class CrewPage extends Component {
           <picture>
             <source
               media="(max-width: 424px)"
-              srcSet={`/asserts/crew/image-${data[index].img}.webp`}
+              srcSet={`/assets/crew/image-${data[index].img}.webp`}
             />
-            <source srcSet={`/asserts/crew/image-${data[index].img}.png`} />
+            <source srcSet={`/assets/crew/image-${data[index].img}.png`} />
             <img
-              src={`/asserts/crew/image-${data[index].img}.webp`}
+              src={`/assets/crew/image-${data[index].img}.webp`}
               className="crew-img"
               alt=""
             />

@@ -14,10 +14,10 @@ class Header extends Component {
 
     return (
       <header className="container">
-        <img src="/asserts/icons/logo.svg" className="logo" alt="" />
+        <img src="/assets/icons/logo.svg" className="logo" alt="" />
 
         <img
-          src="/asserts/icons/icon-hamburger.svg"
+          src="/assets/icons/icon-hamburger.svg"
           className="menu-btn"
           alt=""
           onClick={this.handleMenuBtn}
@@ -27,7 +27,7 @@ class Header extends Component {
           <div className="bg"></div>
 
           <img
-            src="/asserts/icons/icon-close.svg"
+            src="/assets/icons/icon-close.svg"
             className="close-btn"
             alt=""
             onClick={this.handleMenuBtn}
