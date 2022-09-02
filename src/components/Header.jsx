@@ -33,7 +33,7 @@ class Header extends Component {
             onClick={this.handleMenuBtn}
           />
 
-          <Nav tabs={tabs} />
+          <Nav tabs={tabs} onClick={this.handleMenuBtn} />
         </nav>
       </header>
     );
